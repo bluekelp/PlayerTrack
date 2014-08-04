@@ -1,0 +1,11 @@
+player track:
+    # Number of seconds between observations. Smaller numbers generate more data but increase resolution.
+    frequency: 30
+
+    # Movement fewer than N blocks from the last recorded position will not record a new position -
+    # rather the "last" timestamp for the previously recorded position will be updated.
+    #
+    # If movement exceeds this threshold, a new positional row will be recorded.
+    # 16 = 1 chunk
+    # 64 = 4 chunks, etc.
+    min distance to record: 32

@@ -1,0 +1,22 @@
+name: PlayerTrack
+main: com.bluekelp.bukkit.playertrack.PlayerTrack
+version: 1.0.0
+website: https://github.com/bluelelp/PlayerTrack
+author: bluekelp.com
+description: >
+             Record timestamped player location data.
+
+database: true
+
+commands:
+  ptrack:
+    description: control the playertrack plugin
+    usage: |
+           /<command>
+           Example: /<command> - 
+
+permissions:
+  playertrack.*:
+    description: Gives all permissions
+    default: op
+    children:
