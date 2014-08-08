@@ -42,3 +42,7 @@ Set the observation recording frequency to <seconds>. Default frequency is 30 se
 
 Set the minimum distance (in blocks) a player must move to generate a new location observation. Default is 32 blocks (2 chunks).
 
+todo
+----
+- update to use UUIDs internally instead of player name
+
