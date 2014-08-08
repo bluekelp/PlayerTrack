@@ -55,21 +55,23 @@ public class PlayerTrack extends JavaPlugin implements CommandExecutor, Listener
 				return false; // usage?
 			}
 
-			if ("pause".equalsIgnoreCase(args[1])) {
+			if ("pause".equalsIgnoreCase(args[0])) {
 				paused = true;
 				// do *not* update config - always start task on plugin load
 			}
-			else if ("resume".equalsIgnoreCase(args[1])) {
+			else if ("resume".equalsIgnoreCase(args[0])) {
 				paused = false;
 			}
-			else if (args.length > 1 && ("freq".equalsIgnoreCase(args[1]) || "frequency".equalsIgnoreCase(args[1]))) {
-				frequency = Integer.parseInt(args[2]);
+			else if (args.length > 1 && ("freq".equalsIgnoreCase(args[0]) || "frequency".equalsIgnoreCase(args[0]))) {
+				frequency = Integer.parseInt(args[1]);
 				getConfig().set(CFG_HEATMAP+VALUE_FREQUENCY, frequency);
+                saveConfig();
 			}
-			else if (args.length > 1 && ("dist".equalsIgnoreCase(args[1]) || "distance".equalsIgnoreCase(args[1])
-										|| "minDist".equals(args[1]) || "minDistance".equalsIgnoreCase(args[1]))) {
-				minDistanceForNewPoint = Integer.parseInt(args[2]);
+			else if (args.length > 1 && ("dist".equalsIgnoreCase(args[0]) || "distance".equalsIgnoreCase(args[0])
+										|| "minDist".equals(args[0]) || "minDistance".equalsIgnoreCase(args[0]))) {
+				minDistanceForNewPoint = Integer.parseInt(args[1]);
 				getConfig().set(CFG_HEATMAP+VALUE_MIN_DISTANCE, minDistanceForNewPoint);
+                saveConfig();
 			}
 
 			return true;
@@ -88,6 +90,10 @@ public class PlayerTrack extends JavaPlugin implements CommandExecutor, Listener
 
 	public void debug(String msg) {
 		getLogger().fine(msg);
+	}
+
+	public void info(String msg) {
+		getLogger().info(msg);
 	}
 
 	void registerEvents() {
