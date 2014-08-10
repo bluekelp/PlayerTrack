@@ -33,4 +33,19 @@
       <scope>compile</scope>
     </dependency>
   </dependencies>
+  <developers>
+    <developer>
+        <id>bluekelp</id>
+        <email>bukkit-dev@bluekelp.com</email>
+        <url>https://github.com/bluekelp</url>
+        <timezone>GMT-7</timezone>
+        <roles>
+            <role>concept</role>
+            <role>original author</role>
+            <role>current author</role>
+        </roles>
+    </developer>
+  </developers>
+
+
 </project>
